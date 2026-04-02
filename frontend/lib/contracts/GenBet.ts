@@ -42,15 +42,22 @@ class GenBet {
   // ── Read: all markets ────────────────────────────────────────────────────
   async getMarkets(): Promise<Market[]> {
     try {
-      const raw: any = await this.client.readContract({
-        address: this.contractAddress,
-        functionName: "get_market_data",
-        args: [],
-      });
-      const parsed = JSON.parse(typeof raw === "string" ? raw : JSON.stringify(raw));
-      return Object.values(parsed) as Market[];
+      // Step 1: get the total number of markets
+      const count = await this.getMarketCount();
+      if (count === 0) return [];
+
+      // Step 2: fetch each market concurrently (bypasses massive single-rpc payload limits on StudioNet)
+      const fetchPromises: Promise<Market | null>[] = [];
+      for (let i = 0; i < count; i++) {
+        fetchPromises.push(this.getMarket(i.toString()));
+      }
+
+      const results = await Promise.all(fetchPromises);
+      
+      // Step 3: filter out any nulls
+      return results.filter((m) => m !== null) as Market[];
     } catch (error) {
-      console.error("Error fetching markets:", error);
+      console.error("Error fetching markets sequentially:", error);
       return [];
     }
   }
