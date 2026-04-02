@@ -8,6 +8,7 @@ import type { Market, LeaderboardEntry, PlayerScore, TransactionReceipt } from "
 class GenBet {
   private contractAddress: `0x${string}`;
   private client: ReturnType<typeof createClient>;
+  private readClient: ReturnType<typeof createClient>;
 
   constructor(
     contractAddress: string,
@@ -29,6 +30,10 @@ class GenBet {
     }
 
     this.client = createClient(config);
+    this.readClient = createClient({
+      chain: studionet,
+      ...(studioUrl && { endpoint: studioUrl })
+    });
   }
 
   updateAccount(address: string): void {
