@@ -1,6 +1,7 @@
 <div align="center">
   <h1>GenBet: AI-Powered Prediction Markets</h1>
   <p><b>Built for the GenLayer Bradbury Hackathon</b></p>
+  <p><b>Live Contract:</b> <code>0x3367ADB42052Dd8ca674f99Dd889283EE2c70Bf6</code></p>
 </div>
 
 GenBet is a revolutionary, decentralized prediction market protocol powered by GenLayer's Equivalence Principle. Unlike traditional prediction markets that rely on rigid, centralized oracles or subjective human dispute panels, GenBet utilizes Intelligent Contracts and decentralized LLM consensus to automatically fetch, read, and verify real-world URLs to determine market outcomes instantly and completely trustlessly.
@@ -41,9 +42,9 @@ Navigate to the frontend directory and install dependencies:
 cd frontend
 npm install
 ```
-Create a `.env` file referencing your deployed intelligent contract:
+Create a `.env` file referencing the deployed intelligent contract:
 ```env
-NEXT_PUBLIC_CONTRACT_ADDRESS=your_contract_address_here
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x3367ADB42052Dd8ca674f99Dd889283EE2c70Bf6
 ```
 
 ### 4. Running the Dashboard
