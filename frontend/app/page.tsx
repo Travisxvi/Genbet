@@ -84,7 +84,7 @@ export default function HomePage() {
         </div>
       </main>
 
-      <footer className="border-t border-white/10 py-2">
+      <footer className="border-t border-gray-200 dark:border-white/10 py-2">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
             <a

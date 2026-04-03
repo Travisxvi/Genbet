@@ -174,22 +174,19 @@
     to   { opacity: 1; transform: translateY(0);    }
   }
 
-  /* ── Brand Card – #111113 with subtle border ── */
+  /* ── Brand Card ── */
   .brand-card {
-    background: #111113;
-    border: 1px solid rgba(255,255,255,0.07);
+    @apply bg-white border border-gray-200 shadow-sm dark:bg-[#111113] dark:border-white/10 dark:shadow-none transition-colors duration-200;
     border-radius: var(--radius);
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .brand-card:hover {
-    border-color: rgba(255,255,255,0.12);
+    @apply border-gray-300 dark:border-white/20;
   }
 
   /* ── Glass card (dialogs, modals) ── */
   .glass-card {
-    background: rgba(17,17,19,0.85);
-    border: 1px solid rgba(255,255,255,0.08);
+    @apply bg-white/80 border border-gray-200 dark:bg-[#111113]/85 dark:border-white/10 transition-colors duration-200;
     border-radius: var(--radius);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);

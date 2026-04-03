@@ -157,7 +157,7 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
 
       {/* Expanded panel */}
       {expanded && (
-        <div className="border-t border-white/8 bg-black/20 p-4 space-y-4 animate-fade-in mt-auto">
+        <div className="border-t border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-black/20 p-4 space-y-4 animate-fade-in mt-auto">
           {/* Description */}
           <div>
             <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
@@ -194,7 +194,7 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
 
           {/* Bet controls (only when open) */}
           {isOpen && isConnected && (
-            <div className="bg-white/5 rounded-lg p-3 space-y-3">
+            <div className="bg-gray-100 dark:bg-white/5 rounded-lg p-3 space-y-3">
               <p className="text-xs font-semibold uppercase tracking-wider">Place Your Bet</p>
               {/* YES / NO toggle */}
               <div className="grid grid-cols-2 gap-2">
@@ -203,8 +203,8 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
                   onClick={() => setBetSide("YES")}
                   className={`p-3 rounded-lg border-2 transition-all text-sm font-bold ${
                     betSide === "YES"
-                      ? "border-green-500 bg-green-500/20 text-green-400"
-                      : "border-white/10 hover:border-white/20 text-muted-foreground"
+                      ? "border-green-500 bg-green-50 text-green-600 dark:bg-green-500/20 dark:text-green-400"
+                      : "border-gray-200 hover:border-gray-300 text-gray-500 dark:border-white/10 dark:hover:border-white/20 dark:text-muted-foreground"
                   }`}
                 >
                   ✅ YES · {yesPct}%
@@ -214,8 +214,8 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
                   onClick={() => setBetSide("NO")}
                   className={`p-3 rounded-lg border-2 transition-all text-sm font-bold ${
                     betSide === "NO"
-                      ? "border-red-500 bg-red-500/20 text-red-400"
-                      : "border-white/10 hover:border-white/20 text-muted-foreground"
+                      ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-500/20 dark:text-red-400"
+                      : "border-gray-200 hover:border-gray-300 text-gray-500 dark:border-white/10 dark:hover:border-white/20 dark:text-muted-foreground"
                   }`}
                 >
                   ❌ NO · {noPct}%
@@ -228,7 +228,7 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
                   min={1}
                   value={stake}
                   onChange={(e) => setStake(Math.max(1, Number(e.target.value)))}
-                  className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent"
+                  className="flex-1 bg-white border-gray-300 text-gray-900 dark:bg-white/5 dark:border-white/10 dark:text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent"
                   placeholder="Stake amount"
                 />
                 <Button
@@ -374,8 +374,8 @@ export function MarketsTable() {
                 "flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold",
                 "border transition-all duration-200 cursor-pointer select-none",
                 isActive
-                  ? "text-[#00D4FF] bg-[#00D4FF]/10 border-[#00D4FF]/30 shadow-[0_0_10px_rgba(0,212,255,0.15)]"
-                  : "text-muted-foreground bg-transparent border-white/10 hover:border-white/20 hover:text-foreground hover:bg-white/5",
+                  ? "text-blue-600 bg-blue-50 border-blue-200 dark:text-[#00D4FF] dark:bg-[#00D4FF]/10 dark:border-[#00D4FF]/30 dark:shadow-[0_0_10px_rgba(0,212,255,0.15)]"
+                  : "text-gray-600 border border-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:border-white/10 dark:hover:bg-white/5",
               ].join(" ")}
             >
               {cat}

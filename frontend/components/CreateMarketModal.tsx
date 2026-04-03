@@ -161,7 +161,7 @@ export function CreateMarketModal() {
                 key={tpl.label}
                 type="button"
                 onClick={() => applyTemplate(tpl)}
-                className="text-xs px-3 py-1.5 rounded-full border border-white/10 hover:border-[#00D4FF]/40 hover:bg-[#00D4FF]/10 transition-all text-muted-foreground hover:text-[#00D4FF] cursor-pointer"
+                className="text-xs px-3 py-1.5 rounded-full border border-gray-300 dark:border-white/10 hover:border-[#00D4FF]/40 hover:bg-[#00D4FF]/10 transition-all text-gray-500 dark:text-muted-foreground hover:text-[#00D4FF] cursor-pointer"
               >
                 {tpl.label}
               </button>
@@ -254,8 +254,8 @@ export function CreateMarketModal() {
                     onClick={() => setCategory(cat)}
                     className={`px-3 py-1 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                       category === cat
-                        ? "border-[#00D4FF]/40 bg-[#00D4FF]/10 text-[#00D4FF] shadow-[0_0_8px_rgba(0,212,255,0.1)]"
-                        : "border-white/10 hover:border-white/20 text-muted-foreground hover:bg-white/5"
+                        ? "border-[#00D4FF]/40 bg-blue-50 text-blue-600 dark:bg-[#00D4FF]/10 dark:text-[#00D4FF] shadow-[0_0_8px_rgba(0,212,255,0.1)]"
+                        : "border-gray-300 hover:bg-gray-100 text-gray-600 dark:border-white/10 dark:hover:border-white/20 dark:text-muted-foreground dark:hover:bg-white/5"
                     }`}
                   >
                     {cat}

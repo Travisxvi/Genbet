@@ -260,7 +260,7 @@ export function AccountPanel() {
             </Alert>
           )}
 
-          <div className="mt-6 pt-4 border-t border-white/10 space-y-3">
+          <div className="mt-6 pt-4 border-t border-gray-200 dark:border-white/10 space-y-3">
             <Button
               onClick={handleSwitchAccount}
               variant="outline"

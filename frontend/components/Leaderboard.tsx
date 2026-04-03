@@ -60,7 +60,7 @@ export function Leaderboard() {
           <Trophy className="w-5 h-5 text-[#00D4FF]" />
           <span className="text-gradient">Leaderboard</span>
         </h2>
-        <Badge variant="outline" className="text-[10px] font-mono border-white/10 uppercase tracking-wider">
+        <Badge variant="outline" className="text-[10px] font-mono border-gray-300 dark:border-white/10 uppercase tracking-wider text-gray-500 dark:text-muted-foreground">
           Top 10
         </Badge>
       </div>
@@ -109,8 +109,8 @@ export function Leaderboard() {
                 key={entry.address}
                 className={`flex items-center gap-3 p-3 rounded-lg transition-all ${
                   isCurrentUser
-                    ? "bg-accent/20 border-2 border-accent/50"
-                    : "hover:bg-white/5"
+                    ? "bg-[#00D4FF]/10 border-2 border-[#00D4FF]/40 dark:bg-[#00D4FF]/20 dark:border-[#00D4FF]/50"
+                    : "hover:bg-gray-100 dark:hover:bg-white/5"
                 }`}
               >
                 {/* Rank icon */}
