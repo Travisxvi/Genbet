@@ -30,7 +30,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gradient h-[1.2em]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-slate-900 dark:text-white h-[1.2em]">
               {typedText}
               <span className="animate-pulse border-r-2 border-primary ml-1"></span>
             </h1>

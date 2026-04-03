@@ -378,7 +378,7 @@
 html {
   min-height: 100vh;
   scroll-behavior: smooth;
-  background-color: #050505;
+  @apply bg-slate-50 dark:bg-[#050505];
   background-image:
     radial-gradient(ellipse 60% 40% at 50% -10%, rgba(0,212,255,0.04) 0%, transparent 60%),
     radial-gradient(ellipse 50% 30% at 85% 85%, rgba(167,139,250,0.03) 0%, transparent 50%);
@@ -391,7 +391,6 @@ body {
   padding: 0;
   min-height: 100vh;
   overscroll-behavior: none;
-  background-color: transparent;
 }
 
 main { position: relative; }
