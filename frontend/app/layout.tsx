@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
-      <body className="bg-gray-50 dark:bg-[#050505] text-gray-900 dark:text-white transition-colors duration-200">
+      <body className="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#050505] dark:text-white">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Providers>
             {children}

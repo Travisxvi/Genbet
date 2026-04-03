@@ -125,7 +125,7 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
 
         {/* Title + metadata */}
         <div className="flex-1">
-          <p className="font-semibold text-sm leading-snug line-clamp-2 min-h-[2.5rem]">{market.title}</p>
+          <p className="font-semibold text-sm leading-snug line-clamp-2 min-h-[2.5rem] text-slate-900 dark:text-gray-100">{market.title}</p>
           <div className="flex items-center gap-3 mt-3">
             <OddsBar yesStake={market.total_yes_stake} noStake={market.total_no_stake} />
           </div>
@@ -133,8 +133,8 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
             <span className="font-mono text-xs text-green-400">{yesPct}% YES</span>
             <span className="font-mono text-xs text-red-400">{noPct}% NO</span>
           </div>
-          <div className="flex items-center gap-2 mt-3 text-xs text-muted-foreground border-t border-white/5 pt-3">
-            <span>Pool: <span className="font-mono text-foreground font-semibold">{total}</span></span>
+          <div className="flex items-center gap-2 mt-3 text-xs text-slate-500 dark:text-muted-foreground border-t border-slate-200 dark:border-white/5 pt-3">
+            <span>Pool: <span className="font-mono text-slate-900 dark:text-foreground font-semibold">{total}</span></span>
             <span>·</span>
             <span className="flex items-center gap-1">
               <AddressDisplay address={market.creator} maxLength={6} showCopy={false} />
@@ -203,8 +203,8 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
                   onClick={() => setBetSide("YES")}
                   className={`p-3 rounded-lg border-2 transition-all text-sm font-bold ${
                     betSide === "YES"
-                      ? "border-green-500 bg-green-50 text-green-600 dark:bg-green-500/20 dark:text-green-400"
-                      : "border-gray-200 hover:border-gray-300 text-gray-500 dark:border-white/10 dark:hover:border-white/20 dark:text-muted-foreground"
+                      ? "bg-pink-500 text-white hover:bg-pink-400 shadow-[0_0_15px_rgba(236,72,153,0.3)] hover:shadow-[0_0_20px_rgba(236,72,153,0.5)] border-transparent dark:bg-green-500/20 dark:text-green-400 dark:border-green-500 dark:shadow-none"
+                      : "border-slate-200 hover:border-slate-300 text-slate-500 dark:border-white/10 dark:hover:border-white/20 dark:text-muted-foreground"
                   }`}
                 >
                   ✅ YES · {yesPct}%
@@ -214,8 +214,8 @@ function MarketRow({ market, address, isConnected, onSettle, isSettling }: Marke
                   onClick={() => setBetSide("NO")}
                   className={`p-3 rounded-lg border-2 transition-all text-sm font-bold ${
                     betSide === "NO"
-                      ? "border-red-500 bg-red-50 text-red-600 dark:bg-red-500/20 dark:text-red-400"
-                      : "border-gray-200 hover:border-gray-300 text-gray-500 dark:border-white/10 dark:hover:border-white/20 dark:text-muted-foreground"
+                      ? "bg-cyan-500 text-white hover:bg-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] border-transparent dark:bg-red-500/20 dark:text-red-400 dark:border-red-500 dark:shadow-none"
+                      : "border-slate-200 hover:border-slate-300 text-slate-500 dark:border-white/10 dark:hover:border-white/20 dark:text-muted-foreground"
                   }`}
                 >
                   ❌ NO · {noPct}%
@@ -374,8 +374,8 @@ export function MarketsTable() {
                 "flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold",
                 "border transition-all duration-200 cursor-pointer select-none",
                 isActive
-                  ? "text-blue-600 bg-blue-50 border-blue-200 dark:text-[#00D4FF] dark:bg-[#00D4FF]/10 dark:border-[#00D4FF]/30 dark:shadow-[0_0_10px_rgba(0,212,255,0.15)]"
-                  : "text-gray-600 border border-gray-300 hover:bg-gray-100 dark:text-gray-400 dark:border-white/10 dark:hover:bg-white/5",
+                  ? "bg-cyan-50 border border-cyan-400 text-cyan-700 shadow-sm font-medium dark:text-[#00D4FF] dark:bg-[#00D4FF]/10 dark:border-[#00D4FF]/30 dark:shadow-[0_0_10px_rgba(0,212,255,0.15)]"
+                  : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 shadow-sm dark:bg-transparent dark:text-gray-400 dark:border-white/10 dark:hover:bg-white/5",
               ].join(" ")}
             >
               {cat}
