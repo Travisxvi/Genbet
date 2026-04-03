@@ -5,6 +5,7 @@ import { AccountPanel } from "./AccountPanel";
 import { CreateMarketModal } from "./CreateMarketModal";
 import { useMarkets } from "@/lib/hooks/useGenBet";
 import { Logo, LogoMark } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -106,6 +107,7 @@ export function Navbar() {
 
               {/* Right: Actions */}
               <div className="flex items-center gap-3">
+                <ThemeToggle />
                 <CreateMarketModal />
                 {/* Gradient avatar */}
                 <div className="avatar-gradient" title="Your wallet" />

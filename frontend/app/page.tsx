@@ -1,10 +1,27 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { MarketsTable } from "@/components/MarketsTable";
 import { Leaderboard } from "@/components/Leaderboard";
 
 export default function HomePage() {
+  const [typedText, setTypedText] = useState("");
+  const fullText = "Welcome to GenBet.....";
+
+  useEffect(() => {
+    let i = 0;
+    const typingInterval = setInterval(() => {
+      setTypedText(fullText.substring(0, i + 1));
+      i++;
+      if (i >= fullText.length) {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -12,11 +29,12 @@ export default function HomePage() {
       <main className="flex-grow pt-20 pb-12 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-8 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gradient">
-              GenBet
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gradient h-[1.2em]">
+              {typedText}
+              <span className="animate-pulse border-r-2 border-primary ml-1"></span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '1s' }}>
               AI-powered prediction markets on GenLayer.
               <br />
               Create markets, stake on outcomes, and let decentralized AI consensus decide.

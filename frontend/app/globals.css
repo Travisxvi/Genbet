@@ -4,34 +4,34 @@
 
 /* ── GenBet Design System ─────────────────────────────────────────────── */
 :root {
-  /* Core palette */
-  --background:        #050505;
-  --foreground:        #f0f0f0;
+  /* Core palette - Light Mode */
+  --background:        #ffffff;
+  --foreground:        #09090b;
 
-  --card:              #111113;
-  --card-foreground:   #f0f0f0;
-  --popover:           #111113;
-  --popover-foreground:#f0f0f0;
+  --card:              #ffffff;
+  --card-foreground:   #09090b;
+  --popover:           #ffffff;
+  --popover-foreground:#09090b;
 
   /* Neon Cyan – primary CTA */
   --primary:           #00D4FF;
   --primary-foreground:#000000;
 
-  --secondary:         #1a1a1e;
-  --secondary-foreground: #a0a0a8;
+  --secondary:         #f4f4f5;
+  --secondary-foreground: #71717a;
 
-  --muted:             #18181b;
-  --muted-foreground:  #6b6b78;
+  --muted:             #f4f4f5;
+  --muted-foreground:  #71717a;
 
   /* Accent stays cyan */
   --accent:            #00D4FF;
   --accent-foreground: #000000;
 
   --destructive:       oklch(0.65 0.25 25);
-  --destructive-foreground: #f0f0f0;
+  --destructive-foreground: #ffffff;
 
-  --border:            rgba(255,255,255,0.07);
-  --input:             #1a1a1e;
+  --border:            rgba(0,0,0,0.1);
+  --input:             #e4e4e7;
   --ring:              #00D4FF;
 
   --radius: 0.625rem;
@@ -46,13 +46,13 @@
   --chart-4: #a78bfa;
   --chart-5: #fb923c;
 
-  --sidebar: #050505;
-  --sidebar-foreground: #f0f0f0;
+  --sidebar: #f8f9fa;
+  --sidebar-foreground: #09090b;
   --sidebar-primary: #00D4FF;
   --sidebar-primary-foreground: #000000;
-  --sidebar-accent: #111113;
-  --sidebar-accent-foreground: #f0f0f0;
-  --sidebar-border: rgba(255,255,255,0.07);
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #09090b;
+  --sidebar-border: rgba(0,0,0,0.1);
   --sidebar-ring: #00D4FF;
 }
 
