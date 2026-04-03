@@ -183,12 +183,17 @@ export function useCreateMarket() {
         deadlineTs
       );
     },
-    onSuccess: () => {
+    onSuccess: (receipt) => {
       queryClient.invalidateQueries({ queryKey: ["markets"] });
       queryClient.invalidateQueries({ queryKey: ["leaderboard"] });
       setIsCreating(false);
+      
+      const shortHash = receipt?.transactionHash 
+        ? `${receipt.transactionHash.slice(0, 8)}...${receipt.transactionHash.slice(-6)}` 
+        : "";
+
       success("Market created!", {
-        description: "Your prediction market is live on GenLayer.",
+        description: `Tx Hash: ${shortHash}`,
       });
     },
     onError: (err: any) => {
@@ -235,15 +240,20 @@ export function usePlaceBet() {
       setPlacingMarketId(marketId);
       return contract.placeBet(marketId, address, side, stake);
     },
-    onSuccess: () => {
+    onSuccess: (receipt) => {
       queryClient.invalidateQueries({ queryKey: ["markets"] });
       queryClient.invalidateQueries({ queryKey: ["leaderboard"] });
       queryClient.invalidateQueries({ queryKey: ["playerScore"] });
       queryClient.invalidateQueries({ queryKey: ["my-positions"] });
       setIsPlacing(false);
       setPlacingMarketId(null);
+
+      const shortHash = receipt?.transactionHash 
+        ? `${receipt.transactionHash.slice(0, 8)}...${receipt.transactionHash.slice(-6)}` 
+        : "";
+
       success("Bet placed!", {
-        description: "Your position has been recorded on-chain.",
+        description: `Tx Hash: ${shortHash}`,
       });
     },
     onError: (err: any) => {
@@ -283,14 +293,19 @@ export function useSettleMarket() {
       setSettlingMarketId(marketId);
       return contract.settleMarket(marketId, now);
     },
-    onSuccess: () => {
+    onSuccess: (receipt) => {
       queryClient.invalidateQueries({ queryKey: ["markets"] });
       queryClient.invalidateQueries({ queryKey: ["leaderboard"] });
       queryClient.invalidateQueries({ queryKey: ["playerScore"] });
       setIsSettling(false);
       setSettlingMarketId(null);
+
+      const shortHash = receipt?.transactionHash 
+        ? `${receipt.transactionHash.slice(0, 8)}...${receipt.transactionHash.slice(-6)}` 
+        : "";
+
       success("Market settled by AI!", {
-        description: "GenLayer consensus has determined the outcome.",
+        description: `Tx Hash: ${shortHash}`,
       });
     },
     onError: (err: any) => {
